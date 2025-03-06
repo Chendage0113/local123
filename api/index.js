@@ -12,3 +12,8 @@ module.exports = (req, res) => {
     res.status(200).send('位置已记录');
   });
 };
+module.exports = (req, res) => {
+  const { lat, long } = req.query;
+  const mapUrl = `https://maps.google.com/?q=${lat},${long}`;
+  res.status(200).send(`点击这里查看具体位置`);
+};
